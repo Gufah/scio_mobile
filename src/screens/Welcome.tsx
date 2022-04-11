@@ -10,8 +10,10 @@ import {
 import welcomeScreenImg from '../../images/money-wallpaper-ixpap-9.jpeg';
 import { Button } from '../components/Button';
 import colors from '../components/styles/Colors';
+import { useNavigation } from '@react-navigation/native';
 
 export const WelcomeScreen = () => {
+  const { navigate } = useNavigation();
   return (
     <ImageBackground source={welcomeScreenImg} style={styles.background}>
       <StatusBar barStyle='dark-content' />
@@ -23,9 +25,7 @@ export const WelcomeScreen = () => {
           <View style={styles.buttons}>
             <Button
               title='Login'
-              onPress={() => {
-                return;
-              }}
+              onPress={() => navigate('Log In')}
               textStyle={styles.textStyle}
             />
             <Button
@@ -33,7 +33,6 @@ export const WelcomeScreen = () => {
               onPress={() => {
                 return;
               }}
-              style={styles.register}
               textStyle={styles.textStyle}
             />
           </View>
@@ -71,9 +70,6 @@ const styles = StyleSheet.create({
     width: '85%',
     marginTop: 80,
     marginBottom: '40%',
-  },
-  register: {
-    marginTop: 10,
   },
   textStyle: {
     fontWeight: 'bold',

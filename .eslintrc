@@ -15,11 +15,13 @@
     "no-undef": "off",
     "no-duplicate-imports": 0,
     "space-before-function-paren": 0,
+    "object-curly-spacing": ["error", "always"],
     "react-native/no-unused-styles": 2,
     "quotes": ["error", "single"],
     "react-native/no-color-literals": 2,
     "react-native/no-inline-styles": 2,
-    "@typescript-eslint/ban-types": 0
+    "@typescript-eslint/ban-types": 0,
+    "no-unused-vars": "error"
   },
   "settings": {
     "react": {

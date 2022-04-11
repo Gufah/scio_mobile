@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleProp, TextStyle, ViewStyle } from 'react-native';
+import { StyleProp, TextStyle } from 'react-native';
 import styled from 'styled-components/native';
 import colors from './styles/Colors';
 
@@ -7,11 +7,18 @@ type ButtonProps = {
   title?: string;
   textStyle?: StyleProp<TextStyle>;
   onPress?: () => void;
-  style?: StyleProp<ViewStyle>;
+  style?: StyleProp<any>;
+  disabled?: boolean;
 };
-export const Button = ({ title, onPress, textStyle, style }: ButtonProps) => {
+export const Button: React.FC<ButtonProps> = ({
+  title,
+  onPress,
+  textStyle,
+  style,
+  disabled,
+}: ButtonProps) => {
   return (
-    <StyledTouchableOp onPress={onPress} style={style}>
+    <StyledTouchableOp onPress={onPress} style={style} disabled={disabled}>
       <StyledView>
         <StyledText style={textStyle}>{title}</StyledText>
       </StyledView>
@@ -25,16 +32,17 @@ const StyledView = styled.View`
   justify-content: center;
 `;
 const StyledText = styled.Text`
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 700;
   text-align: center;
 `;
 const StyledTouchableOp = styled.TouchableOpacity`
-  border-radius: 12px;
+  border-radius: 5px;
   justify-content: center;
-  padding-left: 14px;
-  padding-right: 14px;
-  background-color: ${colors.green};
-  padding-bottom: 6px;
-  padding-top: 6px;
-  height: 45px;
+  background-color: ${(props: ButtonProps) =>
+    props.style ? props.style : colors.green};
+  padding: 6px 14px;
+  height: 56px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 `;
