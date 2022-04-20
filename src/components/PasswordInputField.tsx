@@ -19,6 +19,7 @@ export const PasswordInputField: React.FC<Props> = ({
         textContentType={'password'}
         returnKeyType={'send'}
         placeholder={placeholderText}
+        secureTextEntry={true}
       />
     </View>
   );

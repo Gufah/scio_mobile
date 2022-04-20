@@ -75,6 +75,8 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     paddingTop: 30,
+    flex: 1,
+    justifyContent: 'center',
   },
   forgotPass: {
     alignSelf: 'flex-end',

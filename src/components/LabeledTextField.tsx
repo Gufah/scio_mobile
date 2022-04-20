@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
   },
   textInput: {
     padding: 7,
-    width: 350,
+    width: '100%',
     height: 56,
     borderWidth: 1,
     borderRadius: 3,

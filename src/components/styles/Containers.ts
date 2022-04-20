@@ -5,7 +5,6 @@ export const ScreenContainerFlexStart = styled.View`
   padding: 15px;
   flex: 1;
   justify-content: flex-start;
-  align-items: flex-start;
   background-color: ${colors.white};
 `;
 

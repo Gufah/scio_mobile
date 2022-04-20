@@ -45,4 +45,5 @@ const StyledTouchableOp = styled.TouchableOpacity`
   height: 56px;
   margin-top: 10px;
   margin-bottom: 10px;
+  min-width: 100%;
 `;
