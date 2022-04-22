@@ -24,7 +24,6 @@ export const ResetPassword = () => {
             <PasswordInputField
               labelText={'Confirm new Password'}
               placeholderText={'Re-enter new password'}
-              style={styles.pass}
             />
             <View style={styles.button}>
               <Button
@@ -46,9 +45,6 @@ const styles = StyleSheet.create({
   inputContainer: {
     marginTop: 30,
     flex: 1,
-  },
-  pass: {
-    marginTop: 15,
   },
   button: {
     marginTop: 40,

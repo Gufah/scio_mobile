@@ -11,4 +11,6 @@ export const ScreenContainerFlexStart = styled.View`
 export const FlexStartWrapper = styled.View`
   flex: 1;
   flex-direction: column;
+  padding-left: 7px;
+  padding-right: 7px;
 `;
