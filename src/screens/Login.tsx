@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { EmailInputField } from '../components/EmailInputField';
 import colors from '../components/styles/Colors';
@@ -15,6 +15,8 @@ import { Description, Title } from '../components/Texts';
 
 export const LoginScreen = () => {
   const { navigate } = useNavigation();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   // TODO: enable log in button when the fields are appropriately filled
   // TODO: Add Google icon to log in with Google button
   return (
@@ -26,10 +28,18 @@ export const LoginScreen = () => {
             Hello! Sign in with your email to continue.
           </Description>
           <View style={styles.inputContainer}>
-            <EmailInputField placeholderText={'Enter your email'} />
+            <EmailInputField
+              placeholderText={'Enter your email'}
+              value={email}
+              onChangeText={(text) => setEmail(text)}
+            />
             <PasswordInputField
               placeholderText={'Enter your password'}
               labelText={'Password'}
+              value={password}
+              onChangeText={(value) => {
+                setPassword(value);
+              }}
             />
             <TouchableOpacity
               style={styles.forgotPass}

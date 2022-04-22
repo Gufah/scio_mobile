@@ -1,16 +1,21 @@
 import React from 'react';
 import { LabeledTextField } from './LabeledTextField';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, TextInputProps, View } from 'react-native';
 
 type Props = {
   placeholderText: string;
-};
+} & TextInputProps;
 export const EmailInputField: React.FC<Props> = ({
   placeholderText,
+  ...otherProps
 }: Props) => {
   return (
     <View style={styles.field}>
-      <LabeledTextField label={'Email'} placeholder={placeholderText} />
+      <LabeledTextField
+        label={'Email'}
+        placeholder={placeholderText}
+        {...otherProps}
+      />
     </View>
   );
 };

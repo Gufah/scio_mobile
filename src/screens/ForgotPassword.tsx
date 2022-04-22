@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { ScreenContainerFlexStart } from '../components/styles/Containers';
 import { Description, Title } from '../components/Texts';
@@ -10,6 +10,7 @@ import { useNavigation } from '@react-navigation/native';
 
 export const ForgotPassword = () => {
   const { navigate } = useNavigation();
+  const [email, setEmail] = useState('');
   return (
     <KeyboardAvoider style={styles.root}>
       <ScreenContainerFlexStart>
@@ -20,7 +21,11 @@ export const ForgotPassword = () => {
         </Description>
         <View style={styles.inputContainer}>
           <View>
-            <EmailInputField placeholderText='Enter your email address' />
+            <EmailInputField
+              placeholderText='Enter your email address'
+              value={email}
+              onChangeText={(value) => setEmail(value)}
+            />
             <View style={styles.button}>
               <Button
                 title={'Submit'}

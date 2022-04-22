@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 import colors from './styles/Colors';
 
 export const Separator = () => {
@@ -21,7 +21,7 @@ const Wrapper = styled.View`
 `;
 const Line = styled.View`
   flex: 1;
-  height: ${StyleSheet.hairlineWidth};
+  height: 0.5px;
   background-color: ${colors.black};
 `;
 const Text = styled.Text`
